@@ -24,10 +24,10 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # Background Image
-feh --bg-center ~/images/wallpaper/Space-Void.jpg &
+feh --bg-fill ~/images/wallpaper/188888.jpg &
 
 # Composition Manager
-xcompmgr -o 0.50 &
+xcompmgr -o 0.30 &
 
 # Screen Brightness
 xrandr --output LVDS-1 --brightness 1.1

@@ -12,7 +12,7 @@ alias lld='ls -odth */'
 alias dir='ls -GBlAFth'
 
 # Editor
-alias emacs='emacs -nw'
+alias emacs='emacsclient -t'
 
 # Tools
 alias top='top -H'
