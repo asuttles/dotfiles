@@ -27,12 +27,15 @@ fi
 feh --bg-center ~/images/wallpaper/Space-Void.jpg &
 
 # Composition Manager
-xcompmgr -o 0.60 &
+xcompmgr -o 0.50 &
 
 # Screen Brightness
 xrandr --output LVDS-1 --brightness 1.1
 
 # Terminal 
 st &
+
+# Emacs FTW!
+emacs --daemon &
 
 exec i3

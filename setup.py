@@ -11,7 +11,9 @@ dotfiles = { ".kshrc" : homeDir, ".profile" : homeDir, ".xinitrc" : homeDir }
 if not( os.path.isdir( dotDir )):
     print( 'dotfile directory does not exist!' )
     quit()
-        
+
+
+print( "Checking symbolic links for..." )    
 
 # Iter through dotfiles...
 for file, dir in dotfiles.items():
@@ -22,7 +24,7 @@ for file, dir in dotfiles.items():
     # Double check dotfile in dotfiles dir
     if os.path.isfile( src ):
 
-        print( f'{src}...' )
+        print( f'  {src}' )
 
         # Make symbolic link, if needed
         if not( os.path.islink( dst )):
