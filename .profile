@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# .profile  15Mar2020
+# .profile  4June20
 
 PATH=$PATH:$HOME/bin
 export PATH
@@ -23,6 +23,11 @@ set -o emacs
 export EDITOR="emacs -nw"
 export VISUAL=$EDITOR
 
+# Timezone
+if $Linux; then
+    export TZ=/usr/share/zoneinfo/Asia/Qatar
+fi
+
 # PWD
 if [ -z "$PWD" ]; then
     PWD=$HOME
@@ -35,4 +40,5 @@ if [ -f $HOME/.kshrc -a -r $HOME/.kshrc ]; then
     export ENV
     . $ENV
 fi
+
 

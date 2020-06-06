@@ -1,6 +1,12 @@
 #!/bin/sh
 #
 
+Linux=true
+
+if [[ $( uname -s ) != "Linux" ]]; then
+    Linux=false
+fi
+
 # X Config Files - System
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
@@ -24,17 +30,30 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # Background Image
-feh --bg-fill ~/images/wallpaper/188888.jpg &
+if $Linux; then
+    feh --bg-fill /home/acs/images/wallpaper/default.jpeg &
+fi
 
 # Composition Manager
-xcompmgr -o 0.30 &
+xcompmgr -o 0.05 &
 
 # Screen Brightness
-xrandr --output LVDS-1 --brightness 1.1
+if $Linux; then
+    xrandr --output LVDS-1 --brightness 1.1
+fi
 
 # Terminal 
-st &
+if $Linux; then
+    st &
+else
+    xterm &
+fi
 
+# Terminal Clock
+if $Linux; then
+    st -g=40x12 -n clock -e tty-clock -c &
+fi
+    
 # Emacs FTW!
 emacs --daemon &
 
