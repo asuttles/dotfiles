@@ -1,13 +1,22 @@
 #! /bin/sh
 
-# .kshrc 4June20
+# .kshrc 6June20
 #  NOTE: executed every time a new shell is spawned
 
 Linux=true
 
+
 if [[ $( uname -s ) != "Linux" ]]; then
+
     Linux=false
+
+    # Setup a Compositor for BSD XTerm
+    if [[ -n "$XTERM_VERSION" ]]; then
+	sleep 0.6
+	transset -a 1>/dev/null
+    fi
 fi
+
 
 # Directory
 if $Linux; then
@@ -18,11 +27,16 @@ if $Linux; then
     alias lld='ls -odth */'
     alias dir='ls -GBlAFth'
 else
-    alias ll='ls -la'
+    alias ll='/bin/ls -FGchlpt'
+    alias la='/bin/ls -AFGchpt'
+    alias lla='/bin/ls -AFGchlpt'
+    alias lld='ls */'
+    alias dir='ll'
 fi
 
 # Editor
-alias emacs='emacsclient -t'
+alias emacs='emacsclient -c -a emacs'
+
 
 # Tools
 alias top='top -H'

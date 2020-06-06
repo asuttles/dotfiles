@@ -30,9 +30,7 @@ if [ -f "$usermodmap" ]; then
 fi
 
 # Background Image
-if $Linux; then
-    feh --bg-fill /home/acs/images/wallpaper/default.jpeg &
-fi
+feh --bg-fill /home/acs/images/wallpaper/default.jpeg &
 
 # Composition Manager
 xcompmgr -o 0.05 &
@@ -42,12 +40,9 @@ if $Linux; then
     xrandr --output LVDS-1 --brightness 1.1
 fi
 
-# Terminal 
-if $Linux; then
-    st &
-else
-    xterm &
-fi
+# Initial Terminal 
+$TERM_EXE -geometry 40x20 &
+
 
 # Terminal Clock
 if $Linux; then

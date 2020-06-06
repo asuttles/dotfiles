@@ -2,6 +2,12 @@
 
 # .profile  4June20
 
+Linux=true
+if [[ $( uname -s ) != "Linux" ]]; then
+    Linux=false
+fi
+
+
 PATH=$PATH:$HOME/bin
 export PATH
 
@@ -20,8 +26,17 @@ export HISTFILE=/home/acs/.ksh_history
 
 # File Editing
 set -o emacs
-export EDITOR="emacs -nw"
+export ALTERNATE_EDITOR=""
+export EDITOR="emacsclient -t -a emacs"
 export VISUAL=$EDITOR
+
+# Preferred Terminal - Used by I3
+if $Linux; then
+    TERM_EXE=st
+else
+    TERM_EXE=xterm
+fi
+export TERM_EXE
 
 # Timezone
 if $Linux; then

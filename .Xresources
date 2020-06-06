@@ -1,0 +1,48 @@
+! Terminal Type
+XTerm.termName: xterm-256color
+
+! Locale
+XTerm.vt100.locale: true
+
+! Fix Alt Key
+XTerm.vt100.metaSendsEscape: true
+
+! Scroll Depth
+XTerm.vt100.saveLines: 1024
+
+! Add Scrollbar
+XTerm.vt100.scrollBar: false
+
+! Copy/Paste
+XTerm.vt100.selectToClipboard: true
+
+
+! Colors
+XTerm.vt100.foreground: rgb:33/ff/33
+XTerm.vt100.background: black
+XTerm.vt100.color0:     rgb:00/00/00
+XTerm.vt100.color1:     rgb:d3/62/65
+XTerm.vt100.color2:     rgb:ae/ce/91
+XTerm.vt100.color3:     rgb:e7/e1/8c
+XTerm.vt100.color4:     rgb:7a/7a/b0
+XTerm.vt100.color5:     rgb:96/3c/59
+XTerm.vt100.color6:     rgb:41/81/79
+XTerm.vt100.color7:     rgb:be/be/be
+XTerm.vt100.color8:     rgb:66/66/66
+XTerm.vt100.color9:     rgb:ef/81/71
+XTerm.vt100.color10:    rgb:e5/f7/79
+XTerm.vt100.color11:    rgb:ff/f7/96
+XTerm.vt100.color12:    rgb:41/86/be
+XTerm.vt100.color13:    rgb:ef/9e/be
+XTerm.vt100.color14:    rgb:71/be/be
+XTerm.vt100.color15:    rgb:ff/ff/ff
+
+! Font
+! fc-match mono
+! use xfontsel
+! Try: XTerm*font: -*-terminus-medium-*-*-*-18-*-*-*-*-*-iso10646-1
+XTerm.vt100.faceName: Liberation Mono:size=10:antialias=false
+XTerm.vt100.font: 7x13
+
+! Shift + Left to Open URL
+XTerm.vt100.translations: #override Shift <Btn1Up>: exec-formatted("firefox '%t'", PRIMARY)
