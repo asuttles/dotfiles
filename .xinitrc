@@ -49,7 +49,4 @@ if $Linux; then
     st -g=40x12 -n clock -e tty-clock -c &
 fi
     
-# Emacs FTW!
-emacs --daemon &
-
 exec i3

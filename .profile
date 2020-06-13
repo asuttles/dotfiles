@@ -57,3 +57,6 @@ if [ -f $HOME/.kshrc -a -r $HOME/.kshrc ]; then
 fi
 
 
+# Emacs FTW!
+/usr/local/bin/emacs --daemon &
+

@@ -32,10 +32,11 @@ else
     alias lla='/bin/ls -AFGchlpt'
     alias lld='ls */'
     alias dir='ll'
+    alias dl='ls -a ~/Downloads'
 fi
 
-# Editor
-alias emacs='emacsclient -c -a emacs'
+# See emacs script in ~/bin
+alias emacs='emacsclient -c -a /usr/local/bin/emacs'
 
 
 # Tools
@@ -87,3 +88,11 @@ alias wx="curl wttr.in/xjd?u0npF"
 alias wx1="curl wttr.in/xjd?u1pFn"
 alias wx2="curl wttr.in/xjd?u2pF"
 alias moon="curl wttr.in/Moon"
+
+# Debug XOrg
+alias startx='startx -- -verbose 5 -logverbose 5'
+
+# Get wifi networks
+alias wifi_nets='ifconfig wlan0 scan'
+alias net_up='sudo service netif start'
+alias net_down='sudo service netif stop'
